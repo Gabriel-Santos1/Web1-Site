@@ -2,6 +2,7 @@ var imagem = ''
 var numImg = 0
 var numImg_baixo = 0 
 var baralho = []
+var img_alteradada = [false,false,false]
 
 const deckDisponivel = [
     [
@@ -26,6 +27,11 @@ const deckDisponivel = [
 function pegarImage(img, event) {
 
     numImg = img
+
+    if (img_alteradada[numImg]){
+        event.target.src = "./assets/card-default.jpg"
+        img_alteradada[numImg] = false
+    }
 
     document.querySelectorAll('.card-principal').forEach(carta => {
         carta.classList.remove('selecionado','flipped');
@@ -52,6 +58,8 @@ function alterarImagem(img_baixo,event) {
         card_principal.src = src;
         card_principal.classList.remove('flipped');
     }, 300);
+
+    img_alteradada[numImg] = true
 }
 
 function deckPreset() {
