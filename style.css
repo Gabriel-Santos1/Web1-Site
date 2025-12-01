@@ -44,12 +44,34 @@ body {
 
 /* Animações */
 
+.card-select  {
+    position: absolute;
+    transition: all 2s ease;
+    padding-left:150px ;
+}
+
+
+
+
 .card-principal {
-    transition: transform 0.2s;
-    
+    width: 150px;
+    height: 210px;
+    transition: transform 0.5s;
+    /* suavidade do movimento */
+    transform-style: preserve-3d;
+    cursor: pointer;
 }
 
 .card-principal.selecionado {
-    transform: scale(1.2);
+    transform: scale(1.2) translateY(-20px);
+    /* aumenta e sobe */
     z-index: 20;
+}
+
+.card-principal.selecionado.flipped {
+    transform: rotateY(180deg) translateY(-20px);
+}
+
+.card-principal img {
+    backface-visibility: hidden;
 }

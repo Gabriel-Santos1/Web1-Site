@@ -1,5 +1,6 @@
 var imagem = ''
 var numImg = 0
+var numImg_baixo = 0 
 var baralho = []
 
 const deckDisponivel = [
@@ -27,14 +28,17 @@ function pegarImage(img, event) {
     numImg = img
 
     document.querySelectorAll('.card-principal').forEach(carta => {
-        carta.classList.remove('selecionado');
+        carta.classList.remove('selecionado','flipped');
     });
 
-    event.target.classList.add('selecionado');
+    event.target.classList.add('selecionado'),'flipped';
 
 }
 
-function alterarImagem(event) {
+function alterarImagem(img_baixo,event) {
+
+    numImg_baixo = document.getElementById(`card-baixo-${img_baixo}`)
+    
     if (numImg === 0) {
         return
     }
@@ -42,6 +46,12 @@ function alterarImagem(event) {
     let src = event.target.src
     let card_principal = document.getElementById(`card-${numImg}`);
     card_principal.src = src
+
+    card_principal.classList.add('flipped');
+    setTimeout(() => {
+        card_principal.src = src;
+        card_principal.classList.remove('flipped');
+    }, 300);
 }
 
 function deckPreset() {
