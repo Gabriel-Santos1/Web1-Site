@@ -1,0 +1,55 @@
+body {
+    background-color: black;
+}
+
+.preset-deck figcaption {
+    color: white;
+    padding-left: 30px;
+}
+
+.card-deck {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid red;
+    padding-bottom: 100px;
+    height: 400px;
+    color: antiquewhite;
+}
+
+.card-select {
+    display: flex;
+    justify-content: center;
+}
+
+.menu {
+    position: relative;
+}
+
+.baralho {
+    color: antiquewhite;
+    position: absolute;
+    bottom: 100px;
+    right: 100px;
+
+    figcaption {
+        padding-left: 30px;
+    }
+}
+
+.card-deck figure img:hover {
+    cursor: pointer;
+    transform: scale3d(100px, 200px);
+}
+
+/* Animações */
+
+.card-principal {
+    transition: transform 0.2s;
+    
+}
+
+.card-principal.selecionado {
+    transform: scale(1.2);
+    z-index: 20;
+}

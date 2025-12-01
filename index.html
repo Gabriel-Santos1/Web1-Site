@@ -5,45 +5,76 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Yu-Gi-Oh</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
     <main>
-        <div class="card-deck">
+        <div class="preset-deck">
             <figure>
-                <img src="./assets/card-default.jpg" alt="">
-                <figcaption>Primeira carta do deck</figcaption>
+                <img width="150px" onclick="deckPreset()" src="./assets/card-default.jpg" alt="">
+                <figcaption>Deck pre-set 1</figcaption>
             </figure>
+        </div>
+        <div class="menu">
+            <div class="card-deck">
+                <figure>
+                    <img class = "card-principal" width="150px" onclick="pegarImage(1,event)" id="card-1" src="./assets/card-default.jpg" alt="">
+                    <figcaption>Primeira carta do deck</figcaption>
+                </figure>
 
-            <figure>
-                <img src="./assets/card-default.jpg" alt="">
-                <figcaption>Segunda carta do deck</figcaption>
-            </figure>
+                <figure>
+                    <img class = "card-principal" width="150px" onclick="pegarImage(2,event)" id="card-2" src="./assets/card-default.jpg" alt="">
+                    <figcaption>Segunda carta do deck</figcaption>
+                </figure>
 
-            <figure>
-                <img src="./assets/card-default.jpg" alt="">
-                <figcaption>Terceira carta do deck</figcaption>
-            </figure>
+                <figure>
+                    <img class = "card-principal" width="150px" onclick="pegarImage(3,event)" id="card-3" src="./assets/card-default.jpg" alt="">
+                    <figcaption>Terceira carta do deck</figcaption>
+                </figure>
+            </div>
+
+            <div class="baralho">
+                <img width="150px" onclick="retornar_cartas()" id="card-3" src="./assets/card-default.jpg" alt="">
+                <figcaption>Embaralhar</figcaption>
+            </div>
         </div>
     </main>
 
     <footer>
         <div class="card-select">
             <figure>
-                <img width="150px" src="./assets/card-chaves.jpeg" alt="">
+                <img id = "card-baixo-1"onclick="alterarImagem(event)" width="150px" src="./assets/card-chaves.jpeg" alt="">
                 <figcaption>Chaves Card </figcaption>
             </figure>
             <figure>
-                <img width="150px" src="./assets/card-chapolim.jpeg" alt="">
+                <img id = "card-baixo-2"onclick="alterarImagem(event)" width="150px" src="./assets/card-chapolim.jpeg" alt="">
                 <figcaption>Chapolim Card </figcaption>
             </figure>
             <figure>
-                <img width="150px" src="./assets/card-goku.jpeg" alt="">
+                <img id = "card-baixo-3"onclick="alterarImagem(event)" width="150px" src="./assets/card-goku.jpeg" alt="">
                 <figcaption>Chapolim Card </figcaption>
             </figure>
+
+            <figure>
+                <img id = "card-baixo-4"onclick="alterarImagem(event)" width="150px" src="./assets/card-chaves.jpeg" alt="">
+                <figcaption>Chaves Card </figcaption>
+            </figure>
+            <figure>
+                <img id = "card-baixo-5"onclick="alterarImagem(event)" width="150px" src="./assets/card-chapolim.jpeg" alt="">
+                <figcaption>Chapolim Card </figcaption>
+            </figure>
+            <figure>
+                <img id = "card-baixo-6"onclick="alterarImagem(event)" width="150px" src="./assets/card-goku.jpeg" alt="">
+                <figcaption>Chapolim Card </figcaption>
+            </figure>
+
         </div>
-        
+
     </footer>
+
+
+    <script src="./script.js"></script>
 </body>
 
 </html>
